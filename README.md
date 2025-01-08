@@ -1,5 +1,7 @@
 # Scandistore
 
+![](./scandistore.png)
+
 A simple eCommerce website with product listing, and cart functionality built using the following technologies:
 
 - **Backend**: PHP, MySQL, GraphQL
