@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS scandiweb_ecommerce_task;
-CREATE DATABASE scandiweb_ecommerce_task;
-USE scandiweb_ecommerce_task;
+DROP DATABASE IF EXISTS scandistore_db;
+CREATE DATABASE scandistore_db;
+USE scandistore_db;
 
 -- CREATING TABLES --
 CREATE TABLE categories (

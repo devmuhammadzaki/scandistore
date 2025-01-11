@@ -41,7 +41,7 @@ To get started, follow these steps:
 
 5. **Database Setup:**
 
-   - Create a database with the same name specified in `.env` (default is `scandiweb_ecommerce_task`).
+   - Create a database with the same name specified in `.env` (default is `scandistore_db`).
    - Run the SQL script found in `schema.sql` file in the root directory to create the required tables with appropriate schema and relations.
 
 6. **Serve or Build the Frontend:**
@@ -92,12 +92,4 @@ To get started, follow these steps:
 │   ├── helpers.php
 │   └── Models
 └── vendor
-    ├── autoload.php
-    ├── composer
-    ├── graham-campbell
-    ├── nikic
-    ├── phpoption
-    ├── symfony
-    ├── vlucas
-    └── webonyx
 ```
