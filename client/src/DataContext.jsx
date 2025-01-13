@@ -6,6 +6,11 @@ const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const [productsData, setProductsData] = useState([]);
+
+  const [showCartModal, setShowCartModal] = useState(false);
+
+  const toggleCartModal = () => setShowCartModal((prev) => !prev);
+
   const [cartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem('cartItems')) || []
   );
@@ -150,6 +155,8 @@ export const DataProvider = ({ children }) => {
         updateCartItemQuantity,
         updateCartItemAttribute,
         emptyCart,
+        showCartModal,
+        toggleCartModal,
       }}
     >
       {children}

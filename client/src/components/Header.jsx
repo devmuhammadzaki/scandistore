@@ -7,12 +7,17 @@ import { GET_CATEGORIES_AND_PRODUCTS, GET_PRODUCTS } from '../graphql/queries';
 
 const Header = () => {
   const { category } = useParams();
-  const { cartItems, setSelectedCategory, setProductsData } = useDataContext();
+    const {
+      cartItems,
+      setSelectedCategory,
+      setProductsData,
+      showCartModal,
+      toggleCartModal,
+    } = useDataContext();
 
-  const [showModal, setShowModal] = useState(false);
+
+  const [showModal] = useState(false);
   const [categories, setCategories] = useState([]);
-
-  const toggleModal = () => setShowModal((prevState) => !prevState);
 
   const [fetchProducts] = useLazyQuery(GET_PRODUCTS, {
     onCompleted: (data) => setProductsData(data.products),
@@ -70,7 +75,7 @@ const Header = () => {
 
       <button
         className="relative z-10 cursor-pointer"
-        onClick={toggleModal}
+        onClick={toggleCartModal}
         data-testid="cart-btn"
       >
         <Cart />
@@ -84,12 +89,11 @@ const Header = () => {
         )}
       </button>
 
-      {showModal && (
+      {showCartModal && (
         <>
           <div
             className="absolute inset-x-0 z-50 h-screen bg-black opacity-25 top-full -right-20 -left-20"
-            onClick={toggleModal}
-            data-testid="cart-overlay"
+            onClick={toggleCartModal}
           ></div>
           <CartModal cartItems={cartItems} />
         </>

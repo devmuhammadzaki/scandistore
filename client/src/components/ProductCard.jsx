@@ -5,7 +5,12 @@ import searchingImg from '../assets/searching.svg';
 import { useDataContext } from '../DataContext';
 
 function ProductCard({ product = {} }) {
-  const { addToCart } = useDataContext();
+  const { addToCart, toggleCartModal } = useDataContext();
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    toggleCartModal();
+  };
 
   return (
     <article>
@@ -34,7 +39,7 @@ function ProductCard({ product = {} }) {
 
           {product.inStock && (
             <button
-              onClick={() => addToCart(product)}
+              onClick={handleAddToCart}
               className="absolute bottom-0 p-2 transition-opacity duration-300 transform translate-y-1/2 rounded-full opacity-0 cta group-hover:opacity-100 right-4"
             >
               <Cart color="white" className="w-5 h-5" />
