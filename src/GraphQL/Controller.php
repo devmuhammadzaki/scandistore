@@ -33,7 +33,7 @@ class Controller
             ];
         }
 
-        header('Content-Type: application/json; charset=UTF-8');
+        header('Content-Type: application/graphql; charset=UTF-8');
         return json_encode($output);
     }
 
