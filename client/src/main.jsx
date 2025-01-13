@@ -1,14 +1,14 @@
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { Slide, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import App from './App.jsx';
 import './assets/index.css';
 
 const graphqlEndpoint = import.meta.env.PROD
   ? '/graphql'
-  : 'http://209.97.132.149/graphql';
+  : 'http://localhost:8000/graphql';
 
 const apolloClient = new ApolloClient({
   uri: graphqlEndpoint,
