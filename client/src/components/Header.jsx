@@ -1,20 +1,19 @@
-import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
 import { useLazyQuery } from '@apollo/client';
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { Cart, CartModal, Loading, Logo, NavigationMenu } from '.';
 import { useDataContext } from '../DataContext';
 import { GET_CATEGORIES_AND_PRODUCTS, GET_PRODUCTS } from '../graphql/queries';
 
 const Header = () => {
   const { category } = useParams();
-    const {
-      cartItems,
-      setSelectedCategory,
-      setProductsData,
-      showCartModal,
-      toggleCartModal,
-    } = useDataContext();
-
+  const {
+    cartItems,
+    setSelectedCategory,
+    setProductsData,
+    showCartModal,
+    toggleCartModal,
+  } = useDataContext();
 
   const [showModal] = useState(false);
   const [categories, setCategories] = useState([]);
@@ -67,7 +66,7 @@ const Header = () => {
         handleCategoryChange={handleCategoryChange}
       />
 
-      <div className="absolute inset-x-0 flex items-center justify-center mx-auto">
+      <div className="hidden sm:flex absolute inset-x-0  items-center justify-center mx-auto">
         <Link to="/" onClick={() => handleCategoryChange(categories[0])}>
           <Logo />
         </Link>
