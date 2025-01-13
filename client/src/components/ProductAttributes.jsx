@@ -10,10 +10,16 @@ const ProductAttributes = ({
   isModalView = false,
   itemSelectedAttributes = [],
 }) => {
-  const { addToCart, updateCartItemAttribute } = useDataContext();
+  
+  const { addToCart, updateCartItemAttribute, toggleCartModal } = useDataContext();
   const [selectedAttributes, setSelectedAttributes] = useState(
     itemSelectedAttributes
   );
+
+  const handleAddToCart = () => {
+    addToCart(product, true, selectedAttributes);
+    toggleCartModal();
+  };
 
   const totalPrice =
     product.prices && product.prices.length > 0
@@ -173,7 +179,7 @@ const ProductAttributes = ({
         <button
           type="button"
           className="w-full mb-8 btn-cta"
-          onClick={() => addToCart(product, true, selectedAttributes)}
+          onClick={handleAddToCart}
           disabled={product.attributes.length !== selectedAttributes.length}
           data-testid="add-to-cart"
         >

@@ -8,7 +8,7 @@ import './assets/index.css';
 
 const graphqlEndpoint = import.meta.env.PROD
   ? '/graphql'
-  : 'http://localhost:8000/graphql';
+  : 'http://209.97.132.149/graphql';
 
 const apolloClient = new ApolloClient({
   uri: graphqlEndpoint,
