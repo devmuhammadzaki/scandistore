@@ -102,8 +102,7 @@ export const DataProvider = ({ children }) => {
       existingCartItems[itemIndex] = updatedCartItem;
 
       toast.success('Cart item updated successfully!');
-    }
-    else if (itemIndex !== duplicateItemIndex) {
+    } else if (itemIndex !== duplicateItemIndex) {
       existingCartItems[itemIndex].quantity +=
         existingCartItems[duplicateItemIndex].quantity;
 
@@ -164,6 +163,7 @@ export const DataProvider = ({ children }) => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useDataContext = () => useContext(DataContext);
 
 DataProvider.propTypes = {
