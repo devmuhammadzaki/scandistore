@@ -17,7 +17,10 @@ function CartModal({ cartItems = [] }) {
   );
 
   return (
-    <section className="absolute z-50 bg-white shadow-lg -right-3.5 top-full w-80 py-6 px-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
+    <section
+      className="absolute z-50 bg-white shadow-lg -right-3.5 top-full w-80 py-6 px-4 max-h-[calc(100vh-4rem)] overflow-y-auto"
+      data-testid="cart-overlay"
+    >
       <h2 className="mb-6">
         <span className="font-bold">My Bag</span>
         {!!totalItems && `, ${totalItems} item${totalItems === 1 ? '' : 's'}`}
